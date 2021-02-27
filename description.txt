@@ -1,14 +1,17 @@
 This mod is a collection of magical items, bosses and enemies!
+I recomend using Hero's Mod to access all of the items.
+At the moment, you can't get the item trough normal gameplay.
 
+CHANGELOG-----------------------------------------------------
 
+0.1.1---------------------------------------------------------
 
+Added a large group of testing items
 
+0.1.2---------------------------------------------------------
 
+Added a mod Icon and Github linking
 
-CHANGELOG
----------
+0.1.3---------------------------------------------------------
 
-0.1
----
-
-Added Cultist armor and themed weapons
+Removed a few of the testing items
