@@ -42,10 +42,7 @@ namespace eastermod.Projectiles
         public override void AI()
         {
             Player player = Main.player[projectile.owner]; 
-            
-            Vector2 idlePosition = player.Center; 
-            
-            projectile.position = idlePosition;
+           
             {
                 Dust dust;
 
@@ -53,7 +50,7 @@ namespace eastermod.Projectiles
                 dust.noGravity = true;
             }
 
-            projectile.rotation += 0.1f;
+            projectile.rotation += 0.2f;
 
             projectile.alpha--;
 
@@ -68,10 +65,10 @@ namespace eastermod.Projectiles
                 vectorToCursor *= distanceToCursor;
             }
 
-            int velocityXBy1000 = (int)(vectorToCursor.X * 1000f);
-            int oldVelocityXBy1000 = (int)(projectile.velocity.X * 1000f);
-            int velocityYBy1000 = (int)(vectorToCursor.Y * 1000f);
-            int oldVelocityYBy1000 = (int)(projectile.velocity.Y * 1000f);
+            int velocityXBy1000 = (int)(vectorToCursor.X * 2000f);
+            int oldVelocityXBy1000 = (int)(projectile.velocity.X * 2000f);
+            int velocityYBy1000 = (int)(vectorToCursor.Y * 2000f);
+            int oldVelocityYBy1000 = (int)(projectile.velocity.Y * 2000f);
 
             // This code checks if the precious velocity of the projectile is different enough from its new velocity, and if it is, syncs it with the server and the other clients in MP.
             // We previously multiplied the speed by 1000, then casted it to int, this is to reduce its precision and prevent the speed from being synced too much.
