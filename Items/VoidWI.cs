@@ -31,17 +31,17 @@ namespace eastermod.Items
 		public override void VerticalWingSpeeds(Player player, ref float ascentWhenFalling, ref float ascentWhenRising,
 			ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
 		{
-			ascentWhenFalling = 0.85f;
-			ascentWhenRising = 0.15f;
-			maxCanAscendMultiplier = 2f;
-			maxAscentMultiplier = 4f;
+			ascentWhenFalling = 0.50f;
+			ascentWhenRising = 0.10f;
+			maxCanAscendMultiplier = 1.5f;
+			maxAscentMultiplier = 2f;
 			constantAscend = 0.1f;
 		}
 
 		public override void HorizontalWingSpeeds(Player player, ref float speed, ref float acceleration)
 		{
-			speed = 16f;
-			acceleration *= 10f;
+			speed = 13f;
+			acceleration *= 7f;
 		}
 
 		public override void AddRecipes()

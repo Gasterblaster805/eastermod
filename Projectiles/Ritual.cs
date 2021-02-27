@@ -14,6 +14,7 @@ namespace eastermod.Projectiles
 
         public override void SetDefaults()
         {
+            
             projectile.width = 408;
             projectile.height = 408;
             projectile.timeLeft = 6000;
@@ -24,7 +25,7 @@ namespace eastermod.Projectiles
             projectile.ignoreWater = true;
             projectile.penetrate = 999;     //+=0.15f;
             projectile.aiStyle = 0;
-
+            
             projectile.light = 1f;
         }
 
@@ -40,8 +41,11 @@ namespace eastermod.Projectiles
 
         public override void AI()
         {
-            Player player = Main.player[projectile.owner];
-
+            Player player = Main.player[projectile.owner]; 
+            
+            Vector2 idlePosition = player.Center; 
+            
+            projectile.position = idlePosition;
             {
                 Dust dust;
 
