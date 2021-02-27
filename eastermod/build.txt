@@ -1,3 +1,0 @@
-displayName = The Eldrich Mod
-author = Coinhead1012
-version = 0.1
