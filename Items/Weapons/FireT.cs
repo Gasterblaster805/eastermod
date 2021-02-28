@@ -8,8 +8,8 @@ namespace eastermod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Tome of Fire");
-			Tooltip.SetDefault("Shoots a fireball that passes through blocks.");
+			DisplayName.SetDefault("Tome of Blood");
+			Tooltip.SetDefault("Shoots a Blood Orb that passes through blocks.");
 			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
 		}
 

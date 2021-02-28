@@ -11,7 +11,7 @@ namespace eastermod.Projectiles
         public override void SetStaticDefaults()
         {
             Main.projFrames[projectile.type] = 4;
-            DisplayName.SetDefault("Fire");
+            DisplayName.SetDefault("Blood Orb");
         }
 
         public override void SetDefaults()
@@ -46,7 +46,7 @@ namespace eastermod.Projectiles
             {
                 Dust dust;
                
-                dust = Main.dust[Terraria.Dust.NewDust(projectile.position, 30, 30, 6, 0f, 0f, 0, new Color(255, 255, 255), 4.144737f)];
+                dust = Main.dust[Terraria.Dust.NewDust(projectile.position, 30, 30, 27, 0f, 0f, 0, new Color(255, 255, 255), 4.144737f)];
                 dust.noGravity = true;
             }
 
