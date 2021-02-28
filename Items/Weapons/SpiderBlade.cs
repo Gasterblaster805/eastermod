@@ -21,24 +21,15 @@ namespace eastermod.Items.Weapons
 			item.useAnimation = 15; // The time span of the using animation of the weapon, suggest setting it the same as useTime.
 			item.knockBack = 6; // The force of knockback of the weapon. Maximum is 20
 			item.value = Item.buyPrice(gold: 1); // The value of the weapon in copper coins
-			item.rare = ItemRarityID.Green; // The rarity of the weapon, from -1 to 13. You can also use ItemRarityID.TheColorRarity
-			item.UseSound = SoundID.Item1; // The sound when the weapon is being used
-			item.autoReuse = true; // Whether the weapon can be used more than once automatically by holding the use button
-			item.crit = 0; // The critical strike chance the weapon has. The player, by default, has 4 critical strike chance
-			
-			//The useStyle of the item. 
-			//Use useStyle 1 for normal swinging or for throwing
-			//use useStyle 2 for an item that drinks such as a potion,
-			//use useStyle 3 to make the sword act like a shortsword
-			//use useStyle 4 for use like a life crystal,
-			//and use useStyle 5 for staffs or guns
-			item.useStyle =1; // 1 is the useStyle
+			item.rare = ItemRarityID.Green;
+			item.UseSound = SoundID.Item1;
+			item.autoReuse = true; 
+			item.crit = 0; 
+			item.useStyle =1; 
 		}
 
 
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit) {
-			// Add the Onfire buff to the NPC for 1 second when the weapon hits an NPC
-			// 60 frames = 1 second
 			target.AddBuff(BuffID.Webbed, 6000);
 		}
 

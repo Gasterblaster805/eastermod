@@ -1,8 +1,7 @@
-using eastermod.Projectiles;
-using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
 namespace eastermod.Items.Weapons
 {
@@ -10,16 +9,16 @@ namespace eastermod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Tome of the Ancient Light");
-			Tooltip.SetDefault("Summons the Ritual of the Ancient One...\nCreates a magic ritual around the player");
+			DisplayName.SetDefault("Tome of the Ancient Ritual");
+			Tooltip.SetDefault("Creates a magic ritual around the player");
 			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 250;
+			item.damage = 150;
 			item.magic = true;
-			item.mana = 12;
+			item.mana = 200;
 			item.width = 40;
 			item.height = 40;
 			item.useTime = 60;
@@ -28,7 +27,7 @@ namespace eastermod.Items.Weapons
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 5;
 			item.value = 10000;
-			item.rare = ItemRarityID.Green;
+			item.rare = ItemRarityID.Yellow;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("Ritual");
@@ -41,6 +40,14 @@ namespace eastermod.Items.Weapons
 		{
             return player.ownedProjectileCounts[item.shoot] < 1;
         }
+
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			// Here we manually spawn the 2nd projectile, manually specifying the projectile type that we wish to shoot.
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("Ritual2"), damage, knockBack, player.whoAmI);
+			// By returning true, the vanilla behavior will take place, which will shoot the 1st projectile, the one determined by the ammo.
+			return true;
+		}
 
 		public override void AddRecipes()
 		{

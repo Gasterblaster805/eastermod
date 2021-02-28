@@ -17,7 +17,7 @@ namespace eastermod.Items.Weapons
 		{
 			item.damage = 20;
 			item.magic = true;
-			item.mana = 12;
+			item.mana = 13;
 			item.width = 40;
 			item.height = 40;
 			item.useTime = 25;
@@ -33,15 +33,14 @@ namespace eastermod.Items.Weapons
 			item.shootSpeed = 16f;
 		}
 
-	
-		
-
-
-
-
 		public override void AddRecipes()
 		{
-		
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Torch, 99);
+			recipe.AddIngredient(ItemID.DemonScythe);
+			recipe.AddTile(TileID.Bookcases);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 	}
 }

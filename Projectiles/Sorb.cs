@@ -11,19 +11,19 @@ namespace eastermod.Projectiles
         public override void SetStaticDefaults()
         {
             Main.projFrames[projectile.type] = 4;
-            DisplayName.SetDefault("Shadow Orb");
+            DisplayName.SetDefault("Darkflame");
         }
 
         public override void SetDefaults()
         {
             projectile.width = 48;
             projectile.height = 40;
-            projectile.timeLeft = 9999;
+            projectile.timeLeft = 600;
             projectile.friendly = true;
             projectile.magic = true;
-            projectile.tileCollide = true;
-            projectile.ignoreWater = false;
-            projectile.penetrate = 1;
+            projectile.tileCollide = false;
+            projectile.ignoreWater = true;
+            projectile.penetrate = 10;
             projectile.aiStyle = 0;
             projectile.alpha = 25;
 
@@ -34,7 +34,7 @@ namespace eastermod.Projectiles
         {
             // Add the Onfire buff to the NPC for 1 second when the weapon hits an NPC
             // 60 frames = 1 second
-            target.AddBuff(BuffID.ShadowFlame, 600);
+            target.AddBuff(BuffID.ShadowFlame, 6000);
         }
 
         public override void AI()

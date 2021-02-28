@@ -11,14 +11,14 @@ namespace eastermod.Projectiles
         public override void SetStaticDefaults()
         {
             Main.projFrames[projectile.type] = 4;
-            DisplayName.SetDefault("Fire Orb");
+            DisplayName.SetDefault("Fire");
         }
 
         public override void SetDefaults()
         {
             projectile.width = 30;
             projectile.height = 30;
-            projectile.timeLeft = 9999;
+            projectile.timeLeft = 600;
             projectile.friendly = true;
             projectile.magic = true;
             projectile.tileCollide = false;

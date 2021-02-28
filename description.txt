@@ -1,6 +1,7 @@
 This mod is a collection of magical items, bosses and enemies!
-I recomend using Hero's Mod to access all of the items.
-At the moment, you can't get the item through normal gameplay.
+At the moment, you can't gat *all* the items normal gameplay.
+Features a couple of eastereggs that can be found with an inventory editor.
+
 
 CHANGELOG----------------------------
 
@@ -12,3 +13,7 @@ Added a mod icon and Github linking
 
 0.1.3--------------------------------
 Removed a few of the testing items
+
+0.1.4--------------------------------
+Added balancing and quality of life changes
+Fire and Darkfire Tomes can now be crafted through normal gameplay
