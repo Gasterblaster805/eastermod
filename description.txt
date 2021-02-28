@@ -1,4 +1,5 @@
 This mod is a collection of magical items, bosses and enemies!
+(Features a large group  of weapons and accesorys, most of which are in the magic damage class)
 At the moment, you can't gat *all* the items normal gameplay.
 Features a couple of eastereggs that can be found with an inventory editor.
 

@@ -8,8 +8,8 @@ namespace eastermod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Tome of the Fire");
-			Tooltip.SetDefault("The Ancient One's tome of fire.\nShoots a fireball.");
+			DisplayName.SetDefault("Tome of Fire");
+			Tooltip.SetDefault("Shoots a fireball that passes through blocks.");
 			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
 		}
 
