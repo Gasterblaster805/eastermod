@@ -1,7 +1,6 @@
 This mod is a collection of magical items, bosses and enemies!
 (Features a large group  of weapons and accesorys, most of which are in the magic damage class)
 At the moment, you can't gat *all* the items normal gameplay.
-Features a couple of eastereggs that can be found with an inventory editor.
 
 
 CHANGELOG----------------------------
@@ -18,3 +17,4 @@ Removed a few of the testing items
 0.1.4--------------------------------
 Added balancing and quality of life changes
 Fire and Darkfire Tomes can now be crafted through normal gameplay
+Deleted testing and junk files
