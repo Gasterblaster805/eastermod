@@ -10,7 +10,7 @@ namespace eastermod.Items.Accessories
 		public override void SetStaticDefaults() 
 		{
 			DisplayName.SetDefault("The Eldrich Eye"); 
-			Tooltip.SetDefault("Your sight is controlled...\nImmunity to Choas State\n-10 defense.");
+			Tooltip.SetDefault("Pop out the old one, if you need a new one!\nImmunity to Choas State\n-10 defense.");
 		}
 		public override void SetDefaults() 
 			{
@@ -26,6 +26,15 @@ namespace eastermod.Items.Accessories
 			player.buffImmune[BuffID.ChaosState] = true;	
 			player.AddBuff(BuffID.Slow, 1);
 			player.AddBuff(BuffID.Obstructed, 1);
-		}		
+		}
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "VoidSoul", 10);
+			recipe.AddIngredient(ItemID.RodofDiscord);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
 	}
 }

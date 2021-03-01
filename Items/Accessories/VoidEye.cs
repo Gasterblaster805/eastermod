@@ -9,7 +9,7 @@ namespace eastermod.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("The Void Eye");
-            Tooltip.SetDefault("You can see the unseen...\nAllows you every sight buff.\nBlocks the bad effects of The Eldrich Eye if put above it in the accessory bar.\n-10 defense.");
+            Tooltip.SetDefault("You can see the unseen...\nPop out the old one, if you need a new one!\nAllows you every sight buff.\nBlocks the bad effects of The Eldrich Eye if put above it in the accessory bar.\n-10 defense.");
         }
 
         public override void SetDefaults()
@@ -31,6 +31,18 @@ namespace eastermod.Items.Accessories
             player.AddBuff(BuffID.Spelunker, 1);
             player.AddBuff(BuffID.NightOwl, 1);
             player.AddBuff(BuffID.Shine, 1);
+        }
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.NightOwlPotion, 10);
+            recipe.AddIngredient(ItemID.HunterPotion, 10);
+            recipe.AddIngredient(ItemID.ShinePotion, 10);
+            recipe.AddIngredient(ItemID.TrapsightPotion, 10);
+            recipe.AddIngredient(ItemID.SpelunkerPotion, 10);
+            recipe.AddTile(TileID.AlchemyTable);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

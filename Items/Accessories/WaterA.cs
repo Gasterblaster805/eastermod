@@ -1,7 +1,6 @@
 using Terraria;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace eastermod.Items.Accessories
 {
@@ -12,6 +11,7 @@ namespace eastermod.Items.Accessories
             DisplayName.SetDefault("The Water");
             Tooltip.SetDefault("You are always wet...\nGives you complete control over water.");
         }
+
         public override void SetDefaults()
         {
             item.width = 18;
@@ -21,6 +21,7 @@ namespace eastermod.Items.Accessories
             item.defense = 0;
             item.accessory = true;
         }
+
         public override void UpdateEquip(Player player)
         {
             player.adjWater = true;
@@ -29,6 +30,16 @@ namespace eastermod.Items.Accessories
             player.breathCD = 0;
             player.dripping = true;
             player.ignoreWater = true;
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "VoidSoul", 10);
+            recipe.AddIngredient(ItemID.DukeFishronMask);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }
