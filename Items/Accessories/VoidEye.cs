@@ -32,6 +32,7 @@ namespace eastermod.Items.Accessories
             player.AddBuff(BuffID.NightOwl, 1);
             player.AddBuff(BuffID.Shine, 1);
         }
+
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);

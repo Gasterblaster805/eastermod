@@ -1,4 +1,4 @@
-displayName = The Eldrich Mod
+displayName = The Eldritch Mod
 author = Coinhead1012
 version = 0.1.4
 homepage = https://www.youtube.com/channel/UC047dl--NFdc5ANVBbaYiaQ
