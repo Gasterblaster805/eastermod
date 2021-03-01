@@ -16,5 +16,8 @@ Removed a few of the testing items
 
 0.1.4--------------------------------
 Added balancing and quality of life changes
-Bloodorb and Darkfire Tomes can now be crafted through normal gameplay
+Bloodorb and Darkfire Tomes can now be crafted through normal gameplay!
+The low tier Occultist Robes can now be crafted with the new Void Souls!
+Void souls are crafted with every soul in the game, they are not dropped by the deleted Void Slime
+Accessorys featured in 0.1.1 are now craftable!
 Deleted testing and junk files
