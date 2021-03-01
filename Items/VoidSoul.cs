@@ -11,7 +11,7 @@ namespace eastermod.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Soul of Void...");
-            Tooltip.SetDefault("The essence of the Occult\nUsed to make occultist robes");
+            Tooltip.SetDefault("The essence of the Occult\nAn amalgamation of the souls found throughout Terraria, created by the Occultists");
             // ticksperframe, frameCount
             Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 4));
             ItemID.Sets.AnimatesAsSoul[item.type] = true;

@@ -17,5 +17,4 @@ Removed a few of the testing items
 0.1.4--------------------------------
 Added balancing and quality of life changes
 Bloodorb and Darkfire Tomes can now be crafted through normal gameplay
-
 Deleted testing and junk files

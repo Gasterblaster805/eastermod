@@ -7,14 +7,14 @@ namespace eastermod
     {
         public override void AddRecipes()
         {
-            // Here is an example of a recipe.
+            /* Here is an example of a recipe.
             ModRecipe recipe = new ModRecipe(this);
             recipe.AddIngredient(null, "VoidSoul");
             recipe.AddIngredient(null, "VoidSoul");
             recipe.AddIngredient(null, "VoidSoul");
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(ItemID.Wood, 999);
-            recipe.AddRecipe();
+            recipe.AddRecipe();   */
 
             /*Here we reuse 'recipe', meaning we don't need to re-declare that it is a ModRecipe
             recipe = new ModRecipe(this);

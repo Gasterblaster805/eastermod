@@ -15,13 +15,13 @@ namespace eastermod.Items.Weapons
 
         public override void SetDefaults()
         {
-            item.damage = 50;
+            item.damage = 75;
             item.magic = true;
             item.mana = 20;
             item.width = 40;
             item.height = 40;
             item.useTime = 20;
-            item.useAnimation = 25;
+            item.useAnimation = 20;
             item.useStyle = ItemUseStyleID.HoldingOut;
             item.noMelee = true; //so the item's animation doesn't do damage
             item.knockBack = 5;
@@ -37,7 +37,16 @@ namespace eastermod.Items.Weapons
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "FireT");
+            recipe.AddIngredient(null, "VoidSoul", 10);
             recipe.AddIngredient(ItemID.CursedFlames);
+            recipe.AddTile(TileID.Bookcases);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "FireT");
+            recipe.AddIngredient(null, "VoidSoul", 10);
+            recipe.AddIngredient(ItemID.GoldenShower);
             recipe.AddTile(TileID.Bookcases);
             recipe.SetResult(this);
             recipe.AddRecipe();

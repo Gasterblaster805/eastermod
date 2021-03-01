@@ -19,7 +19,7 @@ namespace eastermod.Items.Armor
             item.height = 18;
             item.value = 10000;
             item.rare = ItemRarityID.Blue;
-            item.defense = 15;
+            item.defense = 10;
         }
 
         public override void UpdateEquip(Player player)
@@ -34,10 +34,21 @@ namespace eastermod.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "Power of the Occult\n+20% Magic Damage\n+20 Magic Critical Damage\n-20% Mana Cost";
+            player.setBonus = "Power of the Occult\n+20% Magic Damage\n+25% Magic Crit Chance\n-20% Mana Cost";
             player.magicDamage += 0.2f;
-            player.magicCrit += 20;
+            player.magicCrit += 25;
             player.manaCost = 0.80f;
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "VoidSoul", 10);
+            recipe.AddIngredient(ItemID.SkeletronPrimeMask);
+            recipe.AddIngredient(ItemID.HallowedBar, 5);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

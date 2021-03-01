@@ -36,7 +36,8 @@ namespace eastermod.Items.Weapons
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Torch, 99);
+			recipe.AddIngredient(ItemID.ZombieBanner);
+			recipe.AddIngredient(ItemID.DemonEyeBanner);
 			recipe.AddIngredient(ItemID.DemonScythe);
 			recipe.AddTile(TileID.Bookcases);
 			recipe.SetResult(this);

@@ -19,12 +19,23 @@ namespace eastermod.Items.Armor
             item.height = 18;
             item.value = 10000;
             item.rare = ItemRarityID.Blue;
-            item.defense = 10;
+            item.defense = 5;
         }
 
         public override void UpdateEquip(Player player)
         {
             player.buffImmune[BuffID.Horrified] = true;
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "VoidSoul", 10);
+            recipe.AddIngredient(ItemID.Robe);
+            recipe.AddIngredient(ItemID.HallowedBar, 5);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

@@ -25,6 +25,7 @@ namespace eastermod.Projectiles
             projectile.ignoreWater = false;
             projectile.penetrate = 999;
             projectile.aiStyle = 0;
+            projectile.light = 1f;
 
             // projectile.light = 0.5f;
         }
@@ -46,7 +47,7 @@ namespace eastermod.Projectiles
             {
                 Dust dust;
                
-                dust = Main.dust[Terraria.Dust.NewDust(projectile.position, 30, 30, 27, 0f, 0f, 0, new Color(255, 255, 255), 4.144737f)];
+                dust = Main.dust[Terraria.Dust.NewDust(projectile.position, 30, 50, 90, 0f, 0f, 0, new Color(255, 255, 255), 4.0f)];
                 dust.noGravity = true;
             }
 
