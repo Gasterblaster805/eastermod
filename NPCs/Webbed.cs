@@ -17,9 +17,9 @@ namespace eastermod.NPCs
 		{
 			npc.width = 18;
 			npc.height = 40;
-			npc.damage = 0;
-			npc.defense = 999;
-			npc.lifeMax = 999;
+			npc.damage = 10;
+			npc.defense = 1;
+			npc.lifeMax = 25;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = 60f;

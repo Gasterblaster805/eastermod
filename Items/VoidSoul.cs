@@ -48,7 +48,7 @@ namespace eastermod.Items
 
         public override void PostUpdate()
         {
-            Lighting.AddLight(item.Center, Color.Purple.ToVector3() * 0.55f * Main.essScale);
+            Lighting.AddLight(item.Center, Color.Purple.ToVector3() * 2f * Main.essScale);
         }
 
         public override void AddRecipes()

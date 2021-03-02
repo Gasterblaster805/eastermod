@@ -1,4 +1,4 @@
-using Terraria.ID;
+using System;
 using Terraria.ModLoader;
 
 namespace eastermod
@@ -22,6 +22,11 @@ namespace eastermod
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(ItemID.PumpkinPie, 2);
             recipe.AddRecipe();               */
+        }
+
+        internal static void Items(string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }
