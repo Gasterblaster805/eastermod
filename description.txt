@@ -2,6 +2,17 @@ This mod is a collection of magical items, enemies! (Boss Coming Soon!)
 (Features a large group  of weapons and accesorys, most of which are in the magic damage class)
 My youtube channel (linked as the mod homepage) will soon feature videos showcasing the mod.
 
+So far I have made this all by myself, but I do want to thank all of the people giving recommendations and feedback!
+
+
+
+
+
+
+
+
+
+
 CHANGELOG----------------------------
 
 0.1.1--------------------------------
@@ -23,5 +34,8 @@ Added yet another new icon (Final for now!)
 Deleted testing and junk files
 
 0.1.5-------------------------------
-
-Fixed the typo on the mod name (Oops)
+Fixed the typo on the mod name
+Fixed dust issues on the Bloodorb Tome
+Changed requrements and leveling on multiple crafting recipes
+Changed mod author to the real thing (my username)
+Added credits
