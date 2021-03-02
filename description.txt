@@ -1,17 +1,7 @@
 This mod is a collection of magical items, enemies! (Boss Coming Soon!)
-(Features a large group  of weapons and accesorys, most of which are in the magic damage class)
-My youtube channel (linked as the mod homepage) will soon feature videos showcasing the mod.
-
+Features a large group  of weapons and accessorys
+My youtube channel (linked as the mod homepage) will soon feature videos showcasing the mod
 So far I have made this all by myself, but I do want to thank all of the people giving recommendations and feedback!
-
-
-
-
-
-
-
-
-
 
 CHANGELOG----------------------------
 
@@ -26,16 +16,11 @@ Removed a few of the testing items
 
 0.1.4--------------------------------
 Added balancing and quality of life changes
-Bloodorb and Darkfire Tomes can now be crafted through normal gameplay!
-The low tier Occultist Robes can now be crafted with the new Void Souls!
-Void souls are crafted with every soul in the game, they are not dropped by the deleted Void Slime
-Accessorys featured in 0.1.1 are now craftable!
-Added yet another new icon (Final for now!) 
+Accessorys, weapons, and armor featured in 0.1.1 are now craftable!
 Deleted testing and junk files
 
 0.1.5-------------------------------
-Fixed the typo on the mod name
+Fixed the typos in the code, the mod name, and the description.
 Fixed dust issues on the Bloodorb Tome
-Changed requrements and leveling on multiple crafting recipes
-Changed mod author to the real thing (my username)
-Added credits
+
+0.1.6-------------------------------
