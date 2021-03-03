@@ -9,7 +9,7 @@ namespace eastermod.Items.Armor
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Occultist Robe");
+            DisplayName.SetDefault("Melded Robe");
             Tooltip.SetDefault("These robes have seen better days...\nGrants immunity to Horrified");
         }
 

@@ -10,8 +10,8 @@ namespace eastermod.Items
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Soul of Void...");
-            Tooltip.SetDefault("The essence of the Occult\nAn amalgamation of the souls found throughout Terraria, created by the Occultists");
+            DisplayName.SetDefault("The Amalgamation");
+            Tooltip.SetDefault("This soul contains great power, even when it is this impure");
             // ticksperframe, frameCount
             Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 4));
             ItemID.Sets.AnimatesAsSoul[item.type] = true;

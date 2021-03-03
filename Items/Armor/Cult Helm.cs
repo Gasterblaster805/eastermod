@@ -9,7 +9,7 @@ namespace eastermod.Items.Armor
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Occultist Mask");
+            DisplayName.SetDefault("Melded Mask");
             Tooltip.SetDefault("This mask has seen better days...\nGrants immunity to Mana Sickness");
         }
 
@@ -34,7 +34,7 @@ namespace eastermod.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "Power of the Occult\n+20% Magic Damage\n+25% Magic Crit Chance\n-20% Mana Cost";
+            player.setBonus = "Power of the Meld\n+20% Magic Damage\n+25% Magic Crit Chance\n-20% Mana Cost";
             player.magicDamage += 0.2f;
             player.magicCrit += 25;
             player.manaCost = 0.80f;

@@ -11,7 +11,8 @@ namespace eastermod.Items
 		
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("The wing of the Void...");
+	        DisplayName.SetDefault("Unstable Wings");
+			Tooltip.SetDefault("These wings feel crude, and weak, they could use an upgrade.");
 		}
 
 		public override void SetDefaults()

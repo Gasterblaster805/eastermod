@@ -9,7 +9,7 @@ namespace eastermod.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("The Void Eye");
-            Tooltip.SetDefault("You can see the unseen...\nPop out the old one, if you need a new one!\nAllows you every sight buff.\nBlocks the bad effects of The Eldrich Eye if put above it in the accessory bar.\n-10 defense.");
+            Tooltip.SetDefault("You can see the unseen...\nPop out the old one, if you need a new one!\nAllows you every sight buff.\nBlocks the bad effects of The Eldritch Eye if put above it in the accessory bar.\n-10 defense.");
         }
 
         public override void SetDefaults()

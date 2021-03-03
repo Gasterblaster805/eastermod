@@ -9,7 +9,7 @@ namespace eastermod.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Zombie");
+			DisplayName.SetDefault("Webbed Zombie");
 			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Zombie];
 		}
 

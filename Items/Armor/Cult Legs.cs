@@ -9,7 +9,7 @@ namespace eastermod.Items.Armor
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Occultist Leggings");
+            DisplayName.SetDefault("Melded Leggings");
             Tooltip.SetDefault("This legwear has seen better days...\nGrants immunity to Confused");
         }
 
