@@ -24,3 +24,6 @@ Fixed the typos in the code, the mod name, and the description.
 Fixed dust issues on the Bloodorb Tome
 
 0.1.6-------------------------------
+Fixed Download Bug
+Added base for the new boos (Not functional)
+Updated and balanced the code

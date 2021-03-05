@@ -6,7 +6,6 @@ namespace eastermod.Meld
 {
     public class MeldMin : ModNPC
     {
-
         private int Ai = 0;
 
         public override void SetStaticDefaults()
@@ -33,12 +32,9 @@ namespace eastermod.Meld
          * 0 = Nothing
          * 1 = Target Found, Attack
          * 2 = Target Dead
-        
-        
+
         public override void AI()
         {
-            Player player = Main.player[npc.target];
-
-        }
+            Player player = Main.player[npc.target];                                                         */
     }
 }
