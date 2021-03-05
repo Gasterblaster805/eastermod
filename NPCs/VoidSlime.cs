@@ -8,7 +8,7 @@ namespace eastermod.NPCs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Melded Slime");
+            DisplayName.SetDefault("Meld Slime");
             Main.npcFrameCount[npc.type] = Main.npcFrameCount[2];
         }
 

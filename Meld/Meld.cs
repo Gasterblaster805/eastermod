@@ -10,10 +10,13 @@ namespace eastermod.Meld
     [AutoloadBossHead]
     public class Meld : ModNPC
     {
+        private int phase;
+
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Meld");
+            DisplayName.SetDefault("The Meld");
             Main.npcFrameCount[npc.type] = 3;
+            NPCID.Sets.MustAlwaysDraw[npc.type] = true;
         }
 
         public override void SetDefaults()
@@ -26,7 +29,7 @@ namespace eastermod.Meld
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath1;
             npc.value = 60f;
-            npc.knockBackResist = 1f;
+            npc.knockBackResist = 0f;
             npc.aiStyle = -1;
             npc.boss = true;
             npc.lavaImmune = true;
@@ -38,30 +41,6 @@ namespace eastermod.Meld
         {
             npc.lifeMax = (int)(npc.lifeMax / Main.expertLife * 1.2f * bossLifeScale);
             npc.defense = 50;
-        }
-
-        private int difficulty
-        {
-            get
-            {
-                double strength = (double)npc.lifeMax;
-                int difficulty = (int)(4.0 * (1.0 - strength));
-                if (Main.expertMode)
-                {
-                    difficulty++;
-                }
-                return difficulty;
-            }
-        }
-
-        private float difficultyGradient
-        {
-            get
-            {
-                double strength = (double)npc.lifeMax;
-                double difficulty = 4.0 * (1.0 - strength);
-                return (float)(difficulty % 1.0);
-            }
         }
 
         public override void NPCLoot()
@@ -90,61 +69,168 @@ namespace eastermod.Meld
 
         public override void FindFrame(int frameHeight)
         {
-            if (npc.life <= 10000)
+            if (npc.life >= 19999)
             {
-                npc.frame.Y = 2 * frameHeight;
+                npc.frame.Y = 0 * frameHeight;
+                phase = 1;
             }
 
             if (npc.life <= 20000 && npc.life >= 10000)
             {
                 npc.frame.Y = 1 * frameHeight;
+                phase = 2;
+            }
+
+            if (npc.life <= 10000)
+            {
+                npc.frame.Y = 2 * frameHeight;
+                phase = 3;
             }
         }
 
         public override void AI()
         {
-            if (npc.ai[0] == 0f && Main.netMode != NetmodeID.MultiplayerClient)
+            if (phase == 1)
             {
-                npc.TargetClosest(true);
-                npc.ai[0] = 1f;
-            }
+                if (npc.ai[0] == 0f && Main.netMode != NetmodeID.MultiplayerClient)
+                {
+                    npc.TargetClosest(true);
+                    npc.ai[0] = 1f;
+                }
 
-            if (Main.player[npc.target].dead || Math.Abs(npc.position.X - Main.player[npc.target].position.X) > 2000f || Math.Abs(npc.position.Y - Main.player[npc.target].position.Y) > 2000f)
-            {
-                npc.TargetClosest(true);
                 if (Main.player[npc.target].dead || Math.Abs(npc.position.X - Main.player[npc.target].position.X) > 2000f || Math.Abs(npc.position.Y - Main.player[npc.target].position.Y) > 2000f)
                 {
-                    npc.ai[1] = 3f;
+                    npc.TargetClosest(true);
+                    if (Main.player[npc.target].dead || Math.Abs(npc.position.X - Main.player[npc.target].position.X) > 2000f || Math.Abs(npc.position.Y - Main.player[npc.target].position.Y) > 2000f)
+                    {
+                        npc.ai[1] = 3f;
+                    }
+                }
+                if (npc.ai[1] != 3f && npc.ai[1] != 2f)
+                {
+                    Main.PlaySound(SoundID.Roar, (int)npc.position.X, (int)npc.position.Y, 0, 1f, 0f);
+                    npc.ai[1] = 2f;
+                }
+                if (npc.ai[1] == 2f)
+                {
+                    npc.rotation += npc.direction * 0.4f;
+                    if (Vector2.Distance(Main.player[npc.target].Center, npc.Center) > 1)
+                    {
+                        npc.velocity += Vector2.Normalize(Main.player[npc.target].Center - npc.Center) * new Vector2(.5f, .2f);
+                    }
+
+                    npc.velocity *= 0.98f;
+                    npc.velocity.X = Utils.Clamp(npc.velocity.X, -18, 18);
+                    npc.velocity.Y = Utils.Clamp(npc.velocity.Y, -18, 18);
+                }
+                else if (npc.ai[1] == 3f)
+                {
+                    npc.velocity.Y = npc.velocity.Y + 0.1f;
+                    if (npc.velocity.Y < 0f)
+                    {
+                        npc.velocity.Y = npc.velocity.Y * 0.95f;
+                    }
+                    npc.velocity.X = npc.velocity.X * 0.95f;
+                    if (npc.timeLeft > 50)
+                    {
+                        npc.timeLeft = 50;
+                    }
                 }
             }
-            if (npc.ai[1] != 3f && npc.ai[1] != 2f)
+
+            if (phase == 2)
             {
-                Main.PlaySound(SoundID.Roar, (int)npc.position.X, (int)npc.position.Y, 0, 1f, 0f);
-                npc.ai[1] = 2f;
-            }
-            if (npc.ai[1] == 2f)
-            {
-                npc.rotation += npc.direction * 0.6f;
-                if (Vector2.Distance(Main.player[npc.target].Center, npc.Center) > 0)
+                if (npc.ai[0] == 0f && Main.netMode != NetmodeID.MultiplayerClient)
                 {
-                    npc.velocity += Vector2.Normalize(Main.player[npc.target].Center - npc.Center) * new Vector2(.3f, .1f);
+                    npc.TargetClosest(true);
+                    npc.ai[0] = 1f;
                 }
 
-                npc.velocity *= 0.98f;
-                npc.velocity.X = Utils.Clamp(npc.velocity.X, -8, 8);
-                npc.velocity.Y = Utils.Clamp(npc.velocity.Y, -8, 8);
-            }
-            else if (npc.ai[1] == 3f)
-            {
-                npc.velocity.Y = npc.velocity.Y + 0.1f;
-                if (npc.velocity.Y < 0f)
+                if (Main.player[npc.target].dead || Math.Abs(npc.position.X - Main.player[npc.target].position.X) > 2000f || Math.Abs(npc.position.Y - Main.player[npc.target].position.Y) > 2000f)
                 {
-                    npc.velocity.Y = npc.velocity.Y * 0.95f;
+                    npc.TargetClosest(true);
+                    if (Main.player[npc.target].dead || Math.Abs(npc.position.X - Main.player[npc.target].position.X) > 2000f || Math.Abs(npc.position.Y - Main.player[npc.target].position.Y) > 2000f)
+                    {
+                        npc.ai[1] = 3f;
+                    }
                 }
-                npc.velocity.X = npc.velocity.X * 0.95f;
-                if (npc.timeLeft > 50)
+                if (npc.ai[1] != 3f && npc.ai[1] != 2f)
                 {
-                    npc.timeLeft = 50;
+                    Main.PlaySound(SoundID.Roar, (int)npc.position.X, (int)npc.position.Y, 0, 1f, 0f);
+                    npc.ai[1] = 2f;
+                }
+                if (npc.ai[1] == 2f)
+                {
+                    npc.rotation += npc.direction * 0.6f;
+                    if (Vector2.Distance(Main.player[npc.target].Center, npc.Center) > 1)
+                    {
+                        npc.velocity += Vector2.Normalize(Main.player[npc.target].Center - npc.Center) * new Vector2(.5f, .2f);
+                    }
+
+                    npc.velocity *= 0.98f;
+                    npc.velocity.X = Utils.Clamp(npc.velocity.X, -40, 40);
+                    npc.velocity.Y = Utils.Clamp(npc.velocity.Y, -40, 40);
+                }
+                else if (npc.ai[1] == 3f)
+                {
+                    npc.velocity.Y = npc.velocity.Y + 0.1f;
+                    if (npc.velocity.Y < 0f)
+                    {
+                        npc.velocity.Y = npc.velocity.Y * 0.95f;
+                    }
+                    npc.velocity.X = npc.velocity.X * 0.95f;
+                    if (npc.timeLeft > 50)
+                    {
+                        npc.timeLeft = 50;
+                    }
+                }
+            }
+
+            if (phase == 3)
+            {
+                if (npc.ai[0] == 0f && Main.netMode != NetmodeID.MultiplayerClient)
+                {
+                    npc.TargetClosest(true);
+                    npc.ai[0] = 1f;
+                }
+
+                if (Main.player[npc.target].dead || Math.Abs(npc.position.X - Main.player[npc.target].position.X) > 2000f || Math.Abs(npc.position.Y - Main.player[npc.target].position.Y) > 2000f)
+                {
+                    npc.TargetClosest(true);
+                    if (Main.player[npc.target].dead || Math.Abs(npc.position.X - Main.player[npc.target].position.X) > 2000f || Math.Abs(npc.position.Y - Main.player[npc.target].position.Y) > 2000f)
+                    {
+                        npc.ai[1] = 3f;
+                    }
+                }
+                if (npc.ai[1] != 3f && npc.ai[1] != 2f)
+                {
+                    Main.PlaySound(SoundID.Roar, (int)npc.position.X, (int)npc.position.Y, 0, 1f, 0f);
+                    npc.ai[1] = 2f;
+                }
+                if (npc.ai[1] == 2f)
+                {
+                    npc.rotation += npc.direction * 0.2f;
+                    if (Vector2.Distance(Main.player[npc.target].Center, npc.Center) > 1)
+                    {
+                        npc.velocity += Vector2.Normalize(Main.player[npc.target].Center - npc.Center) * new Vector2(.5f, .2f);
+                    }
+
+                    npc.velocity *= 0.97f;
+                    npc.velocity.X = Utils.Clamp(npc.velocity.X, -15, 15);
+                    npc.velocity.Y = Utils.Clamp(npc.velocity.Y, -15, 15);
+                }
+                else if (npc.ai[1] == 3f)
+                {
+                    npc.velocity.Y = npc.velocity.Y + 0.1f;
+                    if (npc.velocity.Y < 0f)
+                    {
+                        npc.velocity.Y = npc.velocity.Y * 0.95f;
+                    }
+                    npc.velocity.X = npc.velocity.X * 0.95f;
+                    if (npc.timeLeft > 50)
+                    {
+                        npc.timeLeft = 50;
+                    }
                 }
             }
         }

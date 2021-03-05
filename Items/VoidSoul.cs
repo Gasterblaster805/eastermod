@@ -10,8 +10,8 @@ namespace eastermod.Items
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("The Amalgamation");
-            Tooltip.SetDefault("This soul contains great power, even when it is this impure");
+            DisplayName.SetDefault("Soul of Meld");
+            Tooltip.SetDefault("This soul contains great power, even when this impure");
             // ticksperframe, frameCount
             Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 4));
             ItemID.Sets.AnimatesAsSoul[item.type] = true;
