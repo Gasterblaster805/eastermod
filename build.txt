@@ -1,7 +1,7 @@
 displayName = The Eldritch Mod
 author = Gasterblaster805
-version = 0.1.6
-homepage = https://www.youtube.com/channel/UC047dl--NFdc5ANVBbaYiaQ
+version = 0.1.5.1
+homepage = https://forums.terraria.org/index.php?threads/the-eldritch-mod.103744/
 hideCode = true
 hideResources = true
 includeSource = false
