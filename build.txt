@@ -1,6 +1,6 @@
 displayName = The Eldritch Mod
 author = Gasterblaster805
-version = 0.1.6
+version = 0.1.5.2
 homepage = https://forums.terraria.org/index.php?threads/the-eldritch-mod.103744/
 hideCode = true
 hideResources = true
