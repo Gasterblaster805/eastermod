@@ -32,7 +32,7 @@ namespace eastermod.NPCs
         {
             if (NPC.downedPlantBoss)
             {
-                return SpawnCondition.OverworldNightMonster.Chance * 0.25f;
+                return SpawnCondition.OverworldNightMonster.Chance * 0.10f;
             }
             else
             {

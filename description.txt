@@ -5,27 +5,5 @@ So far I have made this all by myself, but I do want to thank all of the people 
 
 CHANGELOG----------------------------
 
-0.1.1--------------------------------
-Added a large group of testing items
-
-0.1.2--------------------------------
-Added a mod icon and Github linking
-
-0.1.3--------------------------------
-Removed a few of the testing items
-
-0.1.4--------------------------------
-Added balancing and quality of life changes
-Accessorys, weapons, and armor featured in 0.1.1 are now craftable!
-Deleted testing and junk files
-
-0.1.5-------------------------------
-Fixed the typos in the code, the mod name, and the description.
-Fixed dust issues on the Bloodorb Tome
-
-0.1.5.1-------------------------------
-Fixed Download Bug
-Added base for the new boos (Not functional)
-Updated and balanced the code
-
-0.1.5.2-------------------------------
+0.1.5.3-------------------------------
+Bugfix

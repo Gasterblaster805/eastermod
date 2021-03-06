@@ -16,7 +16,7 @@ namespace eastermod.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 150;
+			item.damage = 50;
 			item.magic = true;
 			item.mana = 200;
 			item.width = 40;
@@ -51,7 +51,12 @@ namespace eastermod.Items.Weapons
 
 		public override void AddRecipes()
 		{
-		
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.FragmentSolar, 25);
+			recipe.AddIngredient(ItemID.SpellTome, 1);
+			recipe.AddTile(TileID.Bookcases);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 	}
 }
