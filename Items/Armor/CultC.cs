@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace eastermod.Items.Armor
 {
-    [AutoloadEquip(EquipType.Legs)]
-    public class CultL : ModItem
+    [AutoloadEquip(EquipType.Body)]
+    public class CultC : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Melded Leggings");
-            Tooltip.SetDefault("This legwear has seen better days...\nGrants immunity to Confused");
+            DisplayName.SetDefault("Melded Robe");
+            Tooltip.SetDefault("These robes have seen better days...\nGrants immunity to Obstructed");
         }
 
         public override void SetDefaults()
@@ -18,25 +18,20 @@ namespace eastermod.Items.Armor
             item.width = 18;
             item.height = 18;
             item.value = 10000;
-            item.rare = ItemRarityID.Blue;
-            item.defense = 5;
+            item.rare = ItemRarityID.Purple;
+            item.defense = 20;
         }
 
         public override void UpdateEquip(Player player)
         {
-            player.buffImmune[BuffID.Confused] = true;
-        }
-
-        public override bool DrawLegs()
-        {
-            return false;
+            player.buffImmune[BuffID.Obstructed] = true;
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "VoidSoul", 10);
-            recipe.AddIngredient(ItemID.MeteorLeggings);
+            recipe.AddIngredient(ItemID.Robe);
             recipe.AddIngredient(ItemID.HallowedBar, 5);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);

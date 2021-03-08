@@ -37,7 +37,7 @@ namespace eastermod.Items.Weapons
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "FireT");
-            recipe.AddIngredient(null, "VoidSoul", 10);
+            recipe.AddIngredient(ItemID.SoulofMight);
             recipe.AddIngredient(ItemID.CursedFlames);
             recipe.AddTile(TileID.Bookcases);
             recipe.SetResult(this);
@@ -45,7 +45,7 @@ namespace eastermod.Items.Weapons
 
             recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "FireT");
-            recipe.AddIngredient(null, "VoidSoul", 10);
+            recipe.AddIngredient(ItemID.SoulofMight);
             recipe.AddIngredient(ItemID.GoldenShower);
             recipe.AddTile(TileID.Bookcases);
             recipe.SetResult(this);

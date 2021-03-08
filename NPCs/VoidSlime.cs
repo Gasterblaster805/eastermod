@@ -30,7 +30,7 @@ namespace eastermod.NPCs
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            if (NPC.downedPlantBoss)
+            if (NPC.downedMoonlord)
             {
                 return SpawnCondition.OverworldNightMonster.Chance * 0.10f;
             }
@@ -42,7 +42,7 @@ namespace eastermod.NPCs
 
         public override void NPCLoot()
         {
-            Item.NewItem(npc.getRect(), mod.ItemType("VoidSoul"));
+            Item.NewItem(npc.getRect(), mod.ItemType("MeldCoin"));
         }
 
         public override void HitEffect(int hitDirection, double damage)

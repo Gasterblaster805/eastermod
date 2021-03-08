@@ -4,20 +4,20 @@ using Terraria.ModLoader;
 
 namespace eastermod.Items.Weapons
 {
-	public class FireT : ModItem
+	public class BoneT : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bloodorb Tome");
-			Tooltip.SetDefault("Shoots a Blood Orb that passes through blocks.");
+			DisplayName.SetDefault("Tome of Bone");
+			Tooltip.SetDefault("Shoots spinning bones");
 			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 20;
+			item.damage = 25;
 			item.magic = true;
-			item.mana = 13;
+			item.mana = 1;
 			item.width = 40;
 			item.height = 40;
 			item.useTime = 25;
@@ -26,19 +26,18 @@ namespace eastermod.Items.Weapons
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 5;
 			item.value = 10000;
-			item.rare = ItemRarityID.Red;
+			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("Dorb");
+			item.shoot = mod.ProjectileType("Boner");
 			item.shootSpeed = 16f;
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.ZombieBanner);
-			recipe.AddIngredient(ItemID.DemonEyeBanner);
-			recipe.AddIngredient(ItemID.DemonScythe);
+			recipe.AddIngredient(ItemID.Bone, 50);
+			recipe.AddIngredient(ItemID.Book);
 			recipe.AddTile(TileID.Bookcases);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

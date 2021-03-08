@@ -17,7 +17,7 @@ namespace eastermod.Items.Accessories
             item.width = 18;
             item.height = 18;
             item.value = 0;
-            item.rare = ItemRarityID.Blue;
+            item.rare = ItemRarityID.Cyan;
             item.defense = 0;
             item.accessory = true;
         }

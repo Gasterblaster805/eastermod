@@ -18,8 +18,8 @@ namespace eastermod.Items.Armor
             item.width = 18;
             item.height = 18;
             item.value = 10000;
-            item.rare = ItemRarityID.Blue;
-            item.defense = 10;
+            item.rare = ItemRarityID.Purple;
+            item.defense = 30;
         }
 
         public override void UpdateEquip(Player player)
@@ -34,10 +34,11 @@ namespace eastermod.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "Power of the Meld\n+20% Magic Damage\n+25% Magic Crit Chance\n-20% Mana Cost";
-            player.magicDamage += 0.2f;
-            player.magicCrit += 25;
-            player.manaCost = 0.80f;
+            player.setBonus = "Power of the Meld\n+30% Magic Damage\n+25% Magic Crit Chance\n-20% Mana Cost\n+70 Maximum Mana";
+            player.magicDamage += 0.3f;        //
+            player.magicCrit += 25;             //
+            player.manaCost -= 0.1f;
+            player.statManaMax2 += 70;
         }
 
         public override void AddRecipes()

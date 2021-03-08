@@ -53,7 +53,7 @@ namespace eastermod.Items
 
         public override void AddRecipes()
         {
-            ModRecipe recipe = new ModRecipe(mod);
+            /*ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.SoulofLight);
             recipe.AddIngredient(ItemID.SoulofFright);
             recipe.AddIngredient(ItemID.SoulofFlight);
@@ -62,7 +62,7 @@ namespace eastermod.Items
             recipe.AddIngredient(ItemID.SoulofNight);
             recipe.AddTile(TileID.AdamantiteForge);
             recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.AddRecipe();        */
         }
     }
 }
