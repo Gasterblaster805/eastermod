@@ -1,9 +1,13 @@
-This mod is a collection of magical items, enemies! (Boss Coming Soon!)
+This mod is a collection of magical items, enemies, and a boss!
 Features a large group  of weapons and accessorys
 If you wan to help out, join the discord (on the homepage)
-So far I have made this all by myself, but I do want to thank all of the people giving recommendations and feedback!
+
+Thanks to ra_men0 for the boss music!
 
 CHANGELOG----------------------------
 
-0.1.5.3-------------------------------
-Bugfix
+0.1.6-------------------------------
+Added a new boss "The Meld"
+Summoned with the Odd Coin
+Added new tomes
+All items can now be obtained through normal gameplay!
